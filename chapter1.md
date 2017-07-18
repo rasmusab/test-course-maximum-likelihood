@@ -1,41 +1,55 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
-attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
+title       : What is likelihood?
+description : Before we maximize the likelihood we need to know what it is.
+
+--- type:NormalExercise lang:r  xp:100 skills:1,7 key:0f9caee3f2
+
+*Maximum likelihood estimation* is a widely used method in both statistics and machine learning. It's used in everything from simple procedures, such as the t-test and linear regression, to more advanced methods like hierarchical models and neural networks. Understanding what maximum likelihood estimation  is and how it works is *crucial* if you want to understand more advanced statistical methods. Fortunately, it's not that difficult!
+
+To understand maximum likelihood estimation (or MLE for short) you need to understand
+
+  * *What* likelihod is.
+  * *Why* you would want to maximize it.
+  * And *how* you can maximize it.
+
+Let's start with *what* likelihood is.
+
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+
+*** =sample_code
+
+*** =solution
+
+*** =sct
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:f39da61dd9
 ## A really bad movie
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+In what context do you usually use the term *likelihood* in statistical modeling?
 
 *** =instructions
-- Adventure
-- Action
-- Animation
-- Comedy
+- The likelihood of *the parameters*.
+- The likelihood of *the data*.
+- The likelihood of *the probability*.
+- The likelihood of *the model*
 
 *** =hint
-Have a look at the plot. Which color does the point with the lowest rating have?
+*Likelihood* is a term from classical statistics where the model and the parameters are assumed fixed
 
-*** =pre_exercise_code
-```{r}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
 
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-library(ggplot2)
-
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
-```
 
 *** =sct
 ```{r}
 # SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
 
-msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
+msg_bad <- "That's not usually how it's used..."
+msg_success <- "Yep! The term likelihood is used when talking about how likely some data is to be generated from a given statistical model."
 test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
