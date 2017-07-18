@@ -14,14 +14,14 @@ To understand maximum likelihood estimation (or MLE for short) you need to under
   * *Why* you would want to maximize it.
   * And *how* you can maximize it.
 
-Let's start with *what* likelihood is.
+Let's start with *what* likelihood is, which this chapter is all about.
 
 In statistics likelihood refers to how likely some data is given some *probability model*. The most basic probability models are often called probability *distributions*.  
 
 
 *** =instructions
 
-In the code to the right we generate 100 random draws from a normal distribution. Change the `mean` of the normal distribution so that the most likely outcome would be the value 42.
+In the code to the right we generate 100 random draws from a normal distribution. Change the `mean` of the normal distribution so that the most *likely* outcome would be the value 42.
 
 
 *** =hint
@@ -78,3 +78,35 @@ msg_success <- "Yep! The term likelihood is used when talking about how likely s
 test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:bfc8ebf3bf
+## Guess the mean
+
+This histogram shows 1000 draws from a normal distribution. Looking at this histogram, what parameters would be most likely to generate this data?
+
+*** =pre_exercise_code
+```{r}
+y <- rnorm(n = 1000, mean = 100, sd = 10)
+hist(y, 100, col = "lightblue")
+```
+
+*** =instructions
+- A mean of 42 and a standard deviation of 10.
+- A mean of 100 and a standard deviation of 50.
+- A mean of 150 and a standard deviation of 100.
+- A mean of 100 and a standard deviation of 10.
+
+*** =hint
+
+
+The mean is the center of the normal distribution that generated this data, and the standard deviation defines the spread, where around 68% of the data would be within one standard deviation from the mean.
+
+
+*** =sct
+```{r}
+# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
+
+msg_bad <- "Mmmm, that doesn't seem likely..."
+msg_success <- "Right! Out of these option a mean of 100 and a standard deviation of 10 seems pretty likely."
+test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success))
+```
