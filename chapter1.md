@@ -14,9 +14,9 @@ To understand maximum likelihood estimation (or MLE for short) you need to under
   * *Why* you would want to maximize it.
   * And *how* you can maximize it.
 
-Let's start with *what* likelihood is, which this chapter is all about.
+Let's start with *what* likelihood is, which this chapter is all about. In statistics likelihood refers to how likely some data is given some *probability model*. So to grok likelihood you need to know a little about probability models, so let's start there. 
 
-In statistics likelihood refers to how likely some data is given some *probability model*. The most basic probability models are often called probability *distributions*.  
+The most basic probability models are often called probability *distributions*. You might have heard of probability distributions like the binomial distribution, the poisson distribution and the exponential distribution. But, by far, the most common example of a distribution is the *normal distribution*. So let's take a look at that one. 
 
 
 *** =instructions
@@ -53,7 +53,7 @@ success_msg("Good work!")
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:f39da61dd9
+--- type:MultipleChoiceExercise lang:r xp:50 skills:7 key:f39da61dd9
 ## The term likelihood
 
 In what context do you usually use the term *likelihood* in statistical modeling?
@@ -79,7 +79,7 @@ test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:bfc8ebf3bf
+--- type:MultipleChoiceExercise lang:r xp:50 skills:7 key:bfc8ebf3bf
 ## Guess the mean
 
 This histogram shows 1000 draws from a normal distribution. Looking at this histogram, what parameters would be most likely to generate this data?
@@ -110,3 +110,10 @@ msg_bad <- "Mmmm, that doesn't seem likely..."
 msg_success <- "Right! Out of these option a mean of 100 and a standard deviation of 10 seems pretty likely."
 test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success))
 ```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1,7 key:03d21d51b4
+# What is a probability model?
+
+A probability model, like the normal distribution, can be seen as a fuction
+
