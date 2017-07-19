@@ -113,7 +113,79 @@ test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success))
 
 
 --- type:NormalExercise lang:r xp:100 skills:1,7 key:03d21d51b4
-# What is a probability model?
+## What is a probability model?
 
-A probability model, like the normal distribution, can be seen as a fuction
+A probability model, like the normal distribution, is a function that defines how likely different outcomes are. For example, a normal distribution defines how likely a continous outcome from $-\infty$ to $\infty$ is. Most interesting probability models have *parameters* that changes this likelihood. The normal distribution has two parameters, the *mean* which defines what outcome is the most likely and the *standard deviation* which defines how centered the likelihood of outcomes is around the mean, a small standard deviation and it's very likely that outcomes will be close to the mean, a larger standard deviation and it's more likely the outcomes will be far away.
 
+The are an infinite number of possible probability models, but the most common and useful ones are often called probbaility distributions. In R there are many more probability distributions that the normal distribution, let's look at some more!
+
+*** =instructions
+
+To the right is code that samples from some more probability distributions that are available in R. Try out parameter different parameter values and see how that changes the distribution of the generated samples. There are no wrong answers to this question, just explore! 
+
+*** =hint
+
+No wrong answer here, just try out some different parameters. However, some of the parameters has to be positive and one of the parameters can only be between 0.0 and 1.0.
+
+*** =sample_code
+```{r}
+# The poisson distribution, defines the likelihood of non-negative whole numbers.
+pois_sample <- rpois(n = 1000, lambda = ___)
+hist(pois_sample, col = "green")
+
+# The exponential distribution, defines the likelihood of non-negative continous numbers.
+exp_sample <- rexp(n = 1000, rate = ___)
+hist(exp_sample, col = "green")
+
+# The binomial distribution, defines the likelihood of whole numbers from 0 to size.
+binom_sample <- rbinom(n = 1000, size = 10, prob = ___)
+hist(binom_sample, col = "green")
+```
+
+*** =solution
+
+```{r}
+# The poisson distribution, defines the likelihood of non-negative whole numbers.
+pois_sample <- rpois(n = 1000, lambda = 10)
+hist(pois_sample, col = "green")
+
+# The exponential distribution, defines the likelihood of non-negative continous numbers.
+exp_sample <- rexp(n = 1000, rate = 1 / 5)
+hist(exp_sample, col = "green")
+
+# The binomial distribution, defines the likelihood of whole numbers from 0 to size.
+binom_sample <- rbinom(n = 1000, size = 10, prob = 0.3)
+hist(binom_sample, col = "green")
+```
+
+*** =sct
+```{r}
+test_error()
+success_msg("Good work!")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1,7 key:7b21ab4f00
+## Calculating the likelihood directly
+
+
+*** =instructions
+
+
+*** =hint
+
+
+*** =sample_code
+```{r}
+
+```
+
+*** =solution
+
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
