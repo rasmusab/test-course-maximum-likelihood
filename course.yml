@@ -3,4 +3,4 @@ description      : This is just a test course about maximum likelihood where I t
 university       : Statswarts
 difficulty_level : 2
 time_needed      : 1 hour
-from             : "r-base-prod:13"
+from: 'r-base-prod:27'
